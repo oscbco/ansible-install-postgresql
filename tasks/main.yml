@@ -5,9 +5,5 @@
   apt_repository: repo={{ postgresql_repository }} state=present update_cache='yes'
 
 - name: SYSTEM POSTGRESQL PostgreSQL is installed
-  apt: pkg={{ postgresql_version }} state=present update_cache='yes'
-  notify: "POSTGRESQL Restart PostgreSQL Service"  
-
-- name: SYSTEM POSTGRESQL Personalized PostgreSQL configuration file must be present
-  copy: src=postgresql.conf dest=/etc/postgresql/9.5/main/postgresql.conf owner=postgres group=postgres mode="u=rw,g=r"
-  notify: "POSTGRESQL Restart PostgreSQL Service"  
+  apt: pkg=postgresql-{{ postgresql_version }} state=present update_cache='yes'
+  notify: "POSTGRESQL Restart PostgreSQL Service"
