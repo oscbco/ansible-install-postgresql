@@ -25,7 +25,7 @@ Example Playbook
     - hosts: servers
       roles:
       - {
-          role: install-postgresql,
+          role: oscbco.install_postgresql,
           postgresql_key: https://www.postgresql.org/media/keys/ACCC4CF8.asc,
           postgresql_repository: deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main,
           postgresql_version: postgresql-11.2
